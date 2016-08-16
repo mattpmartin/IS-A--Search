@@ -6,13 +6,15 @@ package com.company;
 public class TreeNode {
     String name;
     int depth = 0;
+    int SLD;
     TreeNode[] children;
     TreeNode parent;
 
-    public TreeNode(String name, int depth, TreeNode[] children) {
+    public TreeNode(String name, int depth, TreeNode[] children, int SLD) {
         this.name = name;
         this.depth = depth;
         this.children = children;
+        this.SLD = SLD;
     }
 
     public void addParent(TreeNode parent){
@@ -29,5 +31,9 @@ public class TreeNode {
 
     public TreeNode[] getChildren(){
         return this.children;
+    }
+
+    public int getHeuristic(){
+        return depth + SLD;
     }
 }
