@@ -17,6 +17,14 @@ public class TreeNode {
         this.SLD = SLD;
     }
 
+    public TreeNode(String name, TreeNode parent, int depth, TreeNode[] children, int SLD) {
+        this.name = name;
+        this.depth = depth;
+        this.children = children;
+        this.SLD = SLD;
+        this.parent = parent;
+    }
+
     public void addParent(TreeNode parent){
         this.parent = parent;
     }
